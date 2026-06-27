@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-navy: #13294b;
+  --brand-gold: #bfa15f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-navy-900 antialiased;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-[1200px] px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  .btn-gold {
+    @apply btn bg-gold text-white hover:bg-gold-dark focus:ring-gold;
+  }
+  .btn-navy {
+    @apply btn bg-navy text-white hover:bg-navy-800 focus:ring-navy;
+  }
+  .btn-outline {
+    @apply btn border-2 border-navy text-navy hover:bg-navy hover:text-white;
+  }
+
+  .section-title {
+    @apply font-serif text-3xl font-bold text-navy md:text-4xl;
+  }
+
+  .field {
+    @apply w-full rounded-full border border-gray-300 bg-white px-5 py-3 text-sm text-navy-900 placeholder:text-gray-400 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold;
+  }
+  .field-area {
+    @apply w-full rounded-2xl border border-gray-300 bg-white px-5 py-3 text-sm text-navy-900 placeholder:text-gray-400 focus:border-gold focus:outline-none focus:ring-1 focus:ring-gold;
+  }
+}
+
+/* Dekoratif dalga (referans formdaki başlık süsü) */
+.wave-accent {
+  width: 70px;
+  height: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='12' viewBox='0 0 70 12'%3E%3Cpath d='M0 6 Q 8.75 0 17.5 6 T 35 6 T 52.5 6 T 70 6' fill='none' stroke='%23e07c34' stroke-width='2.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+}
